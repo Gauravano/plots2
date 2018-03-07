@@ -152,6 +152,7 @@ Plots2::Application.routes.draw do
   get 'search' => 'searches#new'
   post 'search' => 'searches#new'
 
+  get 'mailer/digest' => 'subscription#digest_mail'
   get 'widget/:id' => 'tag#widget'
   get 'blog' => 'tag#blog', :id => "blog"
   get 'blog/:id' => 'tag#blog'

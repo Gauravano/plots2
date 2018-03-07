@@ -118,6 +118,12 @@ class SubscriptionController < ApplicationController
     render :template => "subscriptions/digest"
   end
 
+  def digest_mail
+    @user = User.last
+    @nodes = current_user.content_followed_in_period(Time.now - 1.week , Time.now)
+    render :template => "subscription_mailer/sending_digest"
+  end
+
   private
 
   def set_following(value,type,id)

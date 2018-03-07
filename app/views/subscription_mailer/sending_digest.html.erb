@@ -1,0 +1,13 @@
+<div class="col-md-6 note-container-note" style="overflow: hidden;">
+  <% @nodes.each do |node| %>
+
+    <%= render partial: 'dashboard/node_moderate', locals: { node: node } %>
+
+    <% if node.main_image %>
+        <a class="img" href="<%= node.path %>"><img src="<%= node.main_image.path(:default) %>" style="width:100%;" /></a>
+    <% end %>
+
+    <h4><a href="<%= node.path %>"><%= node.title %></a></h4>
+
+  <% end %>
+</div>

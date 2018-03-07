@@ -320,7 +320,7 @@ class User < ActiveRecord::Base
     Node.where(nid: node_ids)
         .includes(:revision, :tag)
         .references(:node_revision)
-        .where("(created >= #{start_time.to_i} AND created <= #{end_time.to_i}) OR (timestamp >= #{start_time.to_i}  AND timestamp <= #{end_time.to_i})")
+        .where("(node.created >= #{start_time.to_i} AND node.created <= #{end_time.to_i}) OR (timestamp >= #{start_time.to_i}  AND timestamp <= #{end_time.to_i})")
         .order('node_revisions.timestamp DESC')
         .uniq
   end

@@ -45,5 +45,17 @@ class SubscriptionMailer < ActionMailer::Base
       end
     end
     @footer = feature('email-footer')
+ end
+
+  def sending_digest()
+    # User.all.each do |user|
+    #   @notes = user.content_followed_in_period(Time.now - 1.week, Time.now)
+    #   @user = user
+    #   mail(to: user.email, subject: "Your Weekly digest").deliver
+    # end
+
+    @user = User.last
+    @notes = @user.content_followed_in_period(Time.now - 1.week, Time.now)
+    mail(to: @user.email, subject: "Your Weekly digest").deliver
   end
 end
