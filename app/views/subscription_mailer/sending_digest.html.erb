@@ -1,7 +1,7 @@
-<div class="col-md-12" style="margin-left: 20%;">
-  <h3 style="margin-left: 20%">Your Weekly Digest</h3>
-  <div class="col-md-12" style="display: flex; margin-top: 100px;">
-    <div class="userInfo" style="flex-grow: 1">
+<div style=" width:50%; margin-left: 25%; border-color: black; border: dashed">
+  <h3 style="margin-left: 25%">Your Weekly Digest</h3>
+  <div style=" margin-top: 50px; display: inline-flex;">
+    <div class="userInfo" style=" ">
       <% if @user && @user.photo_file_name %>
           <img style="width:50px;margin-right:6px;" class="img-circle" src="<%= @user.photo_path(:thumb) %>" />
       <% else %>
@@ -13,9 +13,9 @@
       <a class="img" href="https://publiclab.org/"><img src="https://publiclab.org/system/images/photos/000/022/015/original/boots-circle_simple.svg" style="width: 50px; height: 50px; "></a>
     </div>
   </div>
-  <% @nodes.each do |node| %>
 
-    <%= render partial: 'dashboard/node_moderate', locals: { node: node } %>
+  <div style="margin-top:50px; padding-top: 50px; padding-bottom: 50px; background-color: #afd9ee; padding-left: 30px; padding-right: 30px; ">
+  <% @nodes.each do |node| %>
 
     <% if node.main_image %>
         <a class="img" href="<%= node.path %>"><img src="<%= node.main_image.path(:default) %>" style="width:100%;" /></a>
@@ -24,4 +24,5 @@
     <h4><a href="<%= node.path %>"><%= node.title %></a></h4>
 
   <% end %>
+  </div>
 </div>
