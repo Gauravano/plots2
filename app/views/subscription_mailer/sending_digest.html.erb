@@ -2,15 +2,11 @@
   <h3 style="margin-left: 25%">Your Weekly Digest</h3>
   <div style="  margin-top: 50px; display: flex; justify-content: space-between;">
     <div class="userInfo" style=" margin-left: 5% ">
-      <% if @user && @user.photo_file_name %>
-          <img style="width:80px;margin-right:6px;" class="img-circle" src="<%= @user.photo_path(:thumb) %>" />
-      <% else %>
-          <div style="  vertical-align:middle;height:80px;width:80px;margin-right:6px;background:#ccc;" class="img-circle"></div>
-      <% end %>
+      <img style="width:80px;margin-right:6px;" class="img-circle" src="" />
       <!--<a href="/profile/<%= @user.name %>"><%= @user.name %></a>-->
     </div>
     <div class="publicImg" style="margin-right: 5%;">
-      <a class="img" href="https://publiclab.org/"><img src="https://publiclab.org/system/images/photos/000/022/015/original/boots-circle_simple.svg" style=" width: 80px; height: 80px; "></a>
+      <a class="img" href="https://publiclab.org/"><img src="https://i.publiclab.org/system/images/photos/000/000/354/thumb/Boots-ground-02.png" style=" width: 80px; height: 80px; "></a>
     </div>
   </div>
 
