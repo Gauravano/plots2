@@ -1,28 +1,58 @@
 <div style=" width:50%; margin-left: 25%; border-color: black; border: dashed">
   <h3 style="margin-left: 25%">Your Weekly Digest</h3>
-  <div style=" margin-top: 50px; display: inline-flex;">
-    <div class="userInfo" style=" ">
+  <div style="  margin-top: 50px; display: flex; justify-content: space-between;">
+    <div class="userInfo" style=" margin-left: 5% ">
       <% if @user && @user.photo_file_name %>
-          <img style="width:50px;margin-right:6px;" class="img-circle" src="<%= @user.photo_path(:thumb) %>" />
+          <img style="width:80px;margin-right:6px;" class="img-circle" src="<%= @user.photo_path(:thumb) %>" />
       <% else %>
-          <div style=" vertical-align:middle;display:inline-block;height:50px;width:50px;margin-right:6px;background:#ccc;" class="img-circle"></div>
+          <div style="  vertical-align:middle;height:80px;width:80px;margin-right:6px;background:#ccc;" class="img-circle"></div>
       <% end %>
       <!--<a href="/profile/<%= @user.name %>"><%= @user.name %></a>-->
     </div>
-    <div class="publicImg" style="flex-grow: 1">
-      <a class="img" href="https://publiclab.org/"><img src="https://publiclab.org/system/images/photos/000/022/015/original/boots-circle_simple.svg" style="width: 50px; height: 50px; "></a>
+    <div class="publicImg" style="margin-right: 5%;">
+      <a class="img" href="https://publiclab.org/"><img src="https://publiclab.org/system/images/photos/000/022/015/original/boots-circle_simple.svg" style=" width: 80px; height: 80px; "></a>
     </div>
   </div>
 
-  <div style="margin-top:50px; padding-top: 50px; padding-bottom: 50px; background-color: #afd9ee; padding-left: 30px; padding-right: 30px; ">
+  <div style=" margin-top:50px; padding-top: 50px; padding-bottom: 50px; background-color: #afd9ee; padding-left: 30px; padding-right: 30px; ">
   <% @nodes.each do |node| %>
-
-    <% if node.main_image %>
-        <a class="img" href="<%= node.path %>"><img src="<%= node.main_image.path(:default) %>" style="width:100%;" /></a>
-    <% end %>
-
-    <h4><a href="<%= node.path %>"><%= node.title %></a></h4>
-
+  <div style=" border:dotted; border-color: black; padding-left: inherit;">
+    <div class="row" style="width: 100%;">
+      <h4><a href="<%= node.path %>" style="text-decoration: none; color: black; font-weight: 500;"><%= node.title %></a></h4>
+    </div>
+    <div class="row">
+      <% if node.main_image %>
+          <a class="img" href="<%= node.path %>"><img src="<%= node.main_image.path(:default) %>" style="width:100%;" /></a>
+      <% end %>
+    </div>
+    <div id="content" class="pl-content note">
+      <%= raw auto_link(insert_extras(node.latest.render_body.truncate(150)), :sanitize => false) %>  <a href="<%= node.path %>">Read more</a>
+    </div>
+    <div >
+      <div>
+        <% if node.author && node.author.user.photo_file_name %>
+            <img style="width:50px;margin-right:6px;" class="img-circle" src="<%= node.author.user.photo_path(:thumb) %>" />
+        <% else %>
+            <div style="  vertical-align:middle;height:50px;width:50px;margin-right:6px;background:#ccc;" class="img-circle"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <% end %>
+
+  </div>
+  <div>
+    <a href="https://<%= ActionMailer::Base.default_url_options[:host] %>/dashboard/" role="button" style="font-size: 16px;
+        font-family: Helvetica,Arial,sans-serif;
+        text-decoration: none;
+        border-radius: 100px;
+        padding: 8px 20px;
+        background-color: #ffe82b;
+        display: inline-block;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-left: 25%;
+    ">See more on PublicLab</a>
+
   </div>
 </div>
