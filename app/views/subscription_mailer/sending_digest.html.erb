@@ -16,7 +16,7 @@
       style="height: 1px;
         width:50%;
         display:block;
-        margin-left:20%;
+        margin-left:18%;
         overflow: hidden;
         background-color: gainsboro;
     "
@@ -33,7 +33,9 @@
             </div>
 
           <div>
-            <img src="https://pix-media.priceonomics-media.com/blog/921/tattoo_ipsum.jpg" style="width:480px; height: 200px; padding-left: 16px;" />
+            <% if node.author.username != "moderator" %>
+              <img src="https://pix-media.priceonomics-media.com/blog/921/tattoo_ipsum.jpg" style="width:480px; height: 200px; padding-left: 16px;" />
+            <% end %>
           </div>
 
           <br />
@@ -76,7 +78,7 @@
           style="height: 1px;
           width:50%;
           display:block;
-          margin-left:25%;
+          margin-left:20%;
           overflow: hidden;
           background-color: gainsboro;
           "
@@ -94,7 +96,7 @@
         background-color: #ffe82b;
         display: inline-block;
         font-weight: bold;
-        margin-left: 27%;
+        margin-left: 25%;
     ">See more on PublicLab</a>
 
   </div>
