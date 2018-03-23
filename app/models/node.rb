@@ -24,6 +24,19 @@ class Node < ActiveRecord::Base
   attr_accessible :title, :uid, :status, :type, :vid, :cached_likes, :comment, :path, :slug, :views
   self.table_name = 'node'
   self.primary_key = 'nid'
+  validates :token, uniqueness: true
+
+  before_validation :generate_token, on: :create
+
+  def generate_token
+    begin
+      self.token = SecureRandom.urlsafe_base64(64, false)
+    end while self.class.find_by(token: token)
+  end
+
+  def to_param
+    token
+  end
 
   def self.search(query)
     Revision.where('MATCH(node_revisions.body, node_revisions.title) AGAINST(?)', query)
