@@ -55,7 +55,7 @@ class SubscriptionMailer < ActionMailer::Base
     # end
 
     @user = User.where(id: 2)[0]
-    @nodes = @user.content_followed_in_period(Time.now - 1.week, Time.now)
+    @nodes = @user.content_followed_in_period(Time.now - 4.week, Time.now)
     mail(to: @user.email, subject: "Your Weekly digest").deliver
   end
 end

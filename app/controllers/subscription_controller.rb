@@ -120,7 +120,7 @@ class SubscriptionController < ApplicationController
 
   def digest_mail
     @user = User.last
-    @nodes = current_user.content_followed_in_period(Time.now - 1.week , Time.now)
+    @nodes = current_user.content_followed_in_period(Time.now - 3.week , Time.now)
     render :template => "subscription_mailer/sending_digest"
   end
 

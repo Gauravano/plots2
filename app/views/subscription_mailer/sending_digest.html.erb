@@ -41,7 +41,7 @@
           <br />
 
           <div id="content" class="pl-content note" style="padding-right:70px; width:100%; font-size:16px; text-align:justify; font-weight: 500; color:black;">
-            <%= raw auto_link(insert_extras(node.latest.render_body.truncate(200)), :sanitize => false) %>  <a href="<%= node.path %>">Read more</a>
+            <%= raw auto_link(insert_extras(node.latest.render_body.truncate(200)), :sanitize => false) %>
           </div>
 
           <div class="UserName" style="display: flex;   width: 200px;">
@@ -52,8 +52,8 @@
                   <img style="border-radius: 20px; width:40px; margin-right:6px;"  src="https://www.gravatar.com/avatar/cbc15e0d3fc9359e2a87c7d6bc47f5a5" />
               <% end %>
             </div>
-            <div>
-              <a style="text-decoration: none; color: black; font-weight: 500;"  href="/profile/<%= node.author.user.name %>"><p style=" color: black; font-weight: 500;"><%= node.author.user.name %></p></a>
+            <div style="padding: 0; margin: 0;">
+              <a style="text-decoration: none; color: black; font-weight: 500; text-align: right;"  href="/profile/<%= node.author.user.name %>"><p style=" text-align:start ; color: black; font-weight: 500;"><%= node.author.user.name %></p></a>
               <p style="color: grey; line-height:4px; font-size: smaller;">author</p>
             </div>
           </div>
@@ -98,6 +98,28 @@
         font-weight: bold;
         margin-left: 25%;
     ">See more on PublicLab</a>
+    <br /><br />
+    <a href="https://<%= ActionMailer::Base.default_url_options[:host] %>/dashboard/" role="button" style="  font-size: 16px;
+        font-family: Helvetica,Arial,sans-serif;
+        text-decoration: none;
 
+        padding: 8px 20px;
+        background-color: lightgrey;
+        display: inline-block;
+        font-weight: bold;
+        margin-left: 30%;
+    ">Ask a Question</a>
+<br />    <br />
+    <a href="https://<%= ActionMailer::Base.default_url_options[:host] %>/dashboard/" role="button" style="  font-size: 16px;
+        font-family: Helvetica,Arial,sans-serif;
+        text-decoration: none;
+        padding: 8px 20px;
+        background-color: lightgrey;
+        display: inline-block;
+        font-weight: bold;
+        margin-left: 25%;
+    ">Write a Research note</a>
+<br /><br />
+    You can customize your digest and other email notification settings. To explore click <a href="" >here</a>
   </div>
 </div>
