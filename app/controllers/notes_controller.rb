@@ -52,10 +52,18 @@ class NotesController < ApplicationController
       @node = Node.find params[:id]
     end
 
-    if @node.status == 3 && (current_user.nil? || @node.author != current_user)
-      flash[:notice] = "Only author can access the draft note"
-      redirect_to '/'
-      return
+    if @node.status == 3
+      if current_user.nil? || @node.author != current_user
+        flash[:notice] = "Only author can access the draft note"
+        redirect_to '/'
+        return
+      end
+
+      if @node.token == nil || params[:token]== nil || @node.token != params[:token]
+        flash[:notice] = "You need to have valid token "
+        redirect_to '/'
+        return
+      end
     end
 
     if @node.has_power_tag('question')
@@ -371,14 +379,15 @@ class NotesController < ApplicationController
   end
 
   def generate_token
-    @node = Node.find_by params[:id]
-    begin
-      @node.token = SecureRandom.urlsafe_base64(64, false)
-    end while self.class.find_by(token: token)
-
-    @node.save!
-    format.js do
-      
+    @node = Node.find_by(nid: params[:id])
+    if @node.token == nil
+      @node.token = SecureRandom.urlsafe_base64(16, false)
+      @node.save!
     end
-  end
+
+
+    respond_with do |format|
+        format.js { render template: 'users/token' }
+      end
+    end
 end

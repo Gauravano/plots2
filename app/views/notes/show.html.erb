@@ -49,9 +49,11 @@
         <%= @node.created_at.to_s(:short) %>
       </span>
     </span>
-    <a href="/show_link" class="btn btn-default">Generate secret link</a>
-    <div class="link_show">
 
+    <% if current_user.id == @node.uid %>
+        <a  data-remote="true" class="btn btn-default" href="/notes/generate_token/<%= @node.id %>" >Generate secret link</a>
+        <div id="show_link" style="font-size: 16px; font-weight: 500; color: red; ">
+      <% end %>
     </div>
   </div>
 

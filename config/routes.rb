@@ -136,6 +136,7 @@ Plots2::Application.routes.draw do
   get 'notes/author/:id' => 'notes#author'
   get 'notes/author/:author/:topic' => 'notes#author_topic'
   get 'notes/show/:id' => 'notes#show'
+  get 'notes/show/:id/:token' => 'notes#show'
   get 'notes/:author/:date/:id' => 'notes#show'
   get 'notes/feeds' => 'subscription#notes'
 
@@ -153,7 +154,7 @@ Plots2::Application.routes.draw do
   get 'search' => 'searches#new'
   post 'search' => 'searches#new'
 
-  get '/show_link' => 'notes#generate_token'
+  post 'notes/generate_token/:nid' => 'notes#generate_token'
   get 'widget/:id' => 'tag#widget'
   get 'blog' => 'tag#blog', :id => "blog"
   get 'blog/:id' => 'tag#blog'
