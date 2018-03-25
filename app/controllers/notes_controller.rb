@@ -53,14 +53,10 @@ class NotesController < ApplicationController
     end
 
     if @node.status == 3
-      if current_user.nil? || @node.author != current_user
-        flash[:notice] = "Only author can access the draft note"
-        redirect_to '/'
-        return
-      end
+      if ((!current_user.nil? && @node.uid == current_user.id) || (@node.token != nil && params[:token]!= nil && @node.token == params[:token]))
 
-      if @node.token == nil || params[:token]== nil || @node.token != params[:token]
-        flash[:notice] = "You need to have valid token "
+    else
+        flash[:notice] = "This is a draft note, only author can access it or give you secret link "
         redirect_to '/'
         return
       end
