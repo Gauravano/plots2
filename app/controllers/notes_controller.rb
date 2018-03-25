@@ -369,4 +369,16 @@ class NotesController < ApplicationController
     node.update(title: params[:title])
     redirect_to node.path + "#comments"
   end
+
+  def generate_token
+    @node = Node.find_by params[:id]
+    begin
+      @node.token = SecureRandom.urlsafe_base64(64, false)
+    end while self.class.find_by(token: token)
+
+    @node.save!
+    format.js do
+      
+    end
+  end
 end
