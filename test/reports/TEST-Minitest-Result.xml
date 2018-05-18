@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Minitest::Result" skipped="0" failures="0" errors="0" tests="53" assertions="175" time="4.698893829005101">
+  <testcase name="test__does_not_show_map_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.6493323069989856">
+  </testcase>
+  <testcase name="test_add_duplicate_tag" classname="Minitest::Result" assertions="5" time="0.1216624850021617">
+  </testcase>
+  <testcase name="test_add_one_or_two_tags" classname="Minitest::Result" assertions="9" time="0.11252364400206716">
+  </testcase>
+  <testcase name="test_add_tag_not_logged_in" classname="Minitest::Result" assertions="2" time="0.03066006699737045">
+  </testcase>
+  <testcase name="test_adds_comment_when_awarding_a_barnstar" classname="Minitest::Result" assertions="2" time="0.31769170799816493">
+  </testcase>
+  <testcase name="test_adds_comment_when_creating_coauthor" classname="Minitest::Result" assertions="2" time="0.05645684899718617">
+  </testcase>
+  <testcase name="test_admins_can_add_disallowed_tags" classname="Minitest::Result" assertions="3" time="0.054050672999437666">
+  </testcase>
+  <testcase name="test_can_create_tag_instance_(community_tag)_using_a_parent_tag" classname="Minitest::Result" assertions="3" time="0.041631926000263775">
+  </testcase>
+  <testcase name="test_do_not_notify_if_tag_created_on_unpublished_node" classname="Minitest::Result" assertions="1" time="0.03834575599830714">
+  </testcase>
+  <testcase name="test_does_not_show_note_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.03482985200025723">
+  </testcase>
+  <testcase name="test_does_not_show_things_tagged_with_parent_tag" classname="Minitest::Result" assertions="5" time="0.16443364299993846">
+  </testcase>
+  <testcase name="test_does_not_show_wiki_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.03137059400251019">
+  </testcase>
+  <testcase name="test_rss_with_tagname_and_authorname" classname="Minitest::Result" assertions="3" time="0.038707087998773204">
+  </testcase>
+  <testcase name="test_should_choose_I18n_for_tag_controller" classname="Minitest::Result" assertions="2" time="0.13115251700219233">
+  </testcase>
+  <testcase name="test_should_have_a_active_asked_and_an_inactive_answered_tab_for_question" classname="Minitest::Result" assertions="2" time="0.12690217600174947">
+  </testcase>
+  <testcase name="test_should_have_active_Research_tab_for_notes" classname="Minitest::Result" assertions="2" time="0.11816545700276038">
+  </testcase>
+  <testcase name="test_should_have_active_question_tab_for_question" classname="Minitest::Result" assertions="2" time="0.1296096000005491">
+  </testcase>
+  <testcase name="test_should_have_active_question_tab_for_question_for_show_for_author" classname="Minitest::Result" assertions="2" time="0.10601845000201138">
+  </testcase>
+  <testcase name="test_should_list_answered_questions" classname="Minitest::Result" assertions="1" time="0.10660171299969079">
+  </testcase>
+  <testcase name="test_should_list_only_notes_in_notes_view" classname="Minitest::Result" assertions="2" time="0.1053044910004246">
+  </testcase>
+  <testcase name="test_should_list_only_question_in_question_view" classname="Minitest::Result" assertions="2" time="0.11962729899823898">
+  </testcase>
+  <testcase name="test_should_show_a_featured_wiki_page_at_top,_if_it_exists" classname="Minitest::Result" assertions="1" time="0.041149394997773925">
+  </testcase>
+  <testcase name="test_should_take_node_type_as_note_if_tag_is_not_a_question_tag" classname="Minitest::Result" assertions="1" time="0.10298688300099457">
+  </testcase>
+  <testcase name="test_should_take_node_type_as_note_if_tag_is_not_a_question_tag_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.09611525100262952">
+  </testcase>
+  <testcase name="test_should_take_node_type_as_question_if_tag_is_a_question_tag" classname="Minitest::Result" assertions="1" time="0.13225374200192164">
+  </testcase>
+  <testcase name="test_show_note_with_author_and_tagname_with_wildcard" classname="Minitest::Result" assertions="12" time="0.06520873900080915">
+  </testcase>
+  <testcase name="test_show_note_with_author_and_tagname_without_wildcard" classname="Minitest::Result" assertions="9" time="0.1002678359982383">
+  </testcase>
+  <testcase name="test_shows_embeddable_grid_of_tagged_content" classname="Minitest::Result" assertions="2" time="0.11610861400185968">
+  </testcase>
+  <testcase name="test_shows_suggested_tags" classname="Minitest::Result" assertions="2" time="0.0071687749987177085">
+  </testcase>
+  <testcase name="test_shows_things_tagged_with_child_tag" classname="Minitest::Result" assertions="14" time="0.14283601900024223">
+  </testcase>
+  <testcase name="test_tag_author" classname="Minitest::Result" assertions="1" time="0.007263593000971014">
+  </testcase>
+  <testcase name="test_tag_blog" classname="Minitest::Result" assertions="3" time="0.040297739000379806">
+  </testcase>
+  <testcase name="test_tag_contributors" classname="Minitest::Result" assertions="5" time="0.10689409900078317">
+  </testcase>
+  <testcase name="test_tag_index" classname="Minitest::Result" assertions="5" time="0.09977823799999896">
+  </testcase>
+  <testcase name="test_tag_rss" classname="Minitest::Result" assertions="2" time="0.02245914599916432">
+  </testcase>
+  <testcase name="test_tag_search" classname="Minitest::Result" assertions="3" time="0.018215060998045374">
+  </testcase>
+  <testcase name="test_tag_show" classname="Minitest::Result" assertions="7" time="0.1114735560004192">
+  </testcase>
+  <testcase name="test_tag_show_JSON" classname="Minitest::Result" assertions="7" time="0.056697028998314636">
+  </testcase>
+  <testcase name="test_tag_show_range" classname="Minitest::Result" assertions="2" time="0.11217342400050256">
+  </testcase>
+  <testcase name="test_tag_show_wiki_pages_with_author" classname="Minitest::Result" assertions="8" time="0.1089153310022084">
+  </testcase>
+  <testcase name="test_tag_widget" classname="Minitest::Result" assertions="2" time="0.022396439999283757">
+  </testcase>
+  <testcase name="test_validate_unused_tag" classname="Minitest::Result" assertions="2" time="0.04719470599957276">
+  </testcase>
+  <testcase name="test_wildcard_does_not_show_map_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.03075558899945463">
+  </testcase>
+  <testcase name="test_wildcard_does_not_show_note_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.0636294040014036">
+  </testcase>
+  <testcase name="test_wildcard_does_not_show_wiki" classname="Minitest::Result" assertions="1" time="0.03076995599985821">
+  </testcase>
+  <testcase name="test_wildcard_does_not_show_wiki_for_show_for_author" classname="Minitest::Result" assertions="1" time="0.030741560000024037">
+  </testcase>
+  <testcase name="test_wildcard_tag_should_have_a_active_asked_and_an_inactive_answered_tab_for_question" classname="Minitest::Result" assertions="2" time="0.06640260999847669">
+  </testcase>
+  <testcase name="test_wildcard_tag_should_list_answered_questions" classname="Minitest::Result" assertions="1" time="0.061951016999955755">
+  </testcase>
+  <testcase name="test_wildcard_tag_show" classname="Minitest::Result" assertions="4" time="0.06522585799757508">
+  </testcase>
+  <testcase name="test_wildcard_tag_show_wiki_pages" classname="Minitest::Result" assertions="6" time="0.0411064809995878">
+  </testcase>
+  <testcase name="test_wildcard_tag_show_wiki_pages_with_author" classname="Minitest::Result" assertions="9" time="0.04290845899959095">
+  </testcase>
+  <testcase name="test_won't_add_disallowed_tags" classname="Minitest::Result" assertions="3" time="0.036308039001596626">
+  </testcase>
+  <testcase name="test_won't_add_invalid_tags" classname="Minitest::Result" assertions="3" time="0.03616294500170625">
+  </testcase>
+</testsuite>
