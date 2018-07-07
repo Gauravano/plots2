@@ -299,8 +299,7 @@ class UsersController < ApplicationController
   end
 
   def test_digest_email
-    DigestMailJob.perform_later
-    redirect_to "/profile/"+current_user.username
+    WelcomeMailer.welcome_mail(current_user).deliver_now
   end
 
   private

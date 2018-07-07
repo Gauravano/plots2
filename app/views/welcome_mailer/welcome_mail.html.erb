@@ -13,3 +13,12 @@
     <a style="padding:10px; background-color:white; text-decoration:none; margin-left:14px; color:black;" href="https://publiclab.org/methods" target="_blank">Exploring projects</a>
   </p>
 </div>
+
+<%= raw auto_link(insert_extras(@body.latest.render_body), :sanitize => false) %>
+
+
+
+<%= raw auto_link(@body.latest.render_body_email(ActionMailer::Base.default_url_options[:host]), sanitize: false) %>
+
+
+<%= @footer %>

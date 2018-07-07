@@ -14,6 +14,10 @@ class WelcomeMailer < ActionMailer::Base
   def welcome_mail(user)
     subject = 'Welcome to Public Lab'
     @user = user
+    @body = feature_node('welcome-email')
+
+    byebug
+
     @footer = feature('email-footer')
     mail(to: user.email, subject: subject, from: "do-not-reply@#{ActionMailer::Base.default_url_options[:host]}")
   end
