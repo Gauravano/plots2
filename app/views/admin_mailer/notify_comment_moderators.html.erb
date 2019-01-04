@@ -9,11 +9,11 @@
     https://<%= ActionMailer::Base.default_url_options[:host] %><%= @comment.node.path %>
   </p>
 
-    <p> <b> Comment: </b> </p>
-      <div>
+  <hr />
+  <b>Comment body:</b>
+      <div style="color: grey; padding-left: 20px;" >
         <%= @comment.comment %>
       </div>
-  <hr />
   
   <p>
     <a href="https://<%= ActionMailer::Base.default_url_options[:host] %>/admin/publish_comment/<%= @comment.id %>">Approve</a>
