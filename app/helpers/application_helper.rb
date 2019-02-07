@@ -133,9 +133,9 @@ module ApplicationHelper
     comment_body.split(Comment::COMMENT_FILTER).second
   end
 
-  def translation(key)
-    translated_string = t(key)
+  def translation(key, options = {})
     byebug
+    translated_string = t(key, options)
     %(<span>#{translated_string} <a href="https://www.transifex.com/publiclab/publiclaborg/translate/#de/$?q=text%3A#{translated_string}">
           <i style="position:relative; bottom:4px; right:2px;" class="fa fa-globe" title="Needs translation? Click to help translate this text."></i></a>
        </span>)
