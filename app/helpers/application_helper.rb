@@ -133,11 +133,39 @@ module ApplicationHelper
     comment_body.split(Comment::COMMENT_FILTER).second
   end
 
+  def flatten_hash(hash)
+    hash.each_with_object({}) do |(k, v), h|
+
+      if v.is_a? Hash
+        flatten_hash(v).map do |h_k, h_v|
+          h["#{k}.#{h_k}".to_sym] = h_v
+        end
+      else
+        h[k] = v
+      end
+    end
+
+    # I18n.backend.translations[:en] provides us all the English translations but in nested hash form so this function is used
+    # to flatten the hash so that we can extract the key from the value
+  end
+
   def translation(key, options = {})
-    byebug
+    str = I18n.backend.translations[:en]
     translated_string = t(key, options)
     %(<span>#{translated_string} <a href="https://www.transifex.com/publiclab/publiclaborg/translate/#de/$?q=text%3A#{translated_string}">
           <i style="position:relative; bottom:4px; right:2px;" class="fa fa-globe" title="Needs translation? Click to help translate this text."></i></a>
        </span>)
+
+
+    # This translation method would take the place of default translate helper <%= t('') %> provided by the rails
+    # We would be using the translate helper for translating the key but will pass it in our HTML span
+  end
+
+  def value_to_key(value, options = {})
+    flattened_hash = flatten_hash(I18n.backend.translations[:en])
+    key = flattened_hash.invert[value]
+
+    # Here, we accepted value from the view, model or controller and found key using that value.
+    # The key is necessity because it's common in all the locales
   end
 end

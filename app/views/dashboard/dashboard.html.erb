@@ -34,7 +34,7 @@
               <h4>
                 <small class="pull-right hidden-xs hidden-sm"><%= raw translation('dashboard.dashboard.from_blog', :url => '/blog') %></small>
                 <a class="title" href="/blog"><%= @blog.title %></a> 
-                <small><%=raw translation('dashboard.dashboard.by') %> <a href="/profile/<%= @blog.author.username %>"><%= @blog.author.username %></a></small>
+                <small><%=raw value_to_key("by") %> <a href="/profile/<%= @blog.author.username %>"><%= @blog.author.username %></a></small>
               </h4>
        
             </div>
