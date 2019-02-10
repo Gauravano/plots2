@@ -152,9 +152,13 @@ module ApplicationHelper
   def translation(key, options = {})
     str = I18n.backend.translations[:en]
     translated_string = t(key, options)
+    if translated_string.length > 3
     %(<span>#{translated_string} <a href="https://www.transifex.com/publiclab/publiclaborg/translate/#de/$?q=text%3A#{translated_string}">
-          <i style="position:relative; bottom:4px; right:2px;" class="fa fa-globe" title="Needs translation? Click to help translate this text."></i></a>
+          <i data-toggle="tooltip" data-placement="top" title="Needs translation? Click to help translate this text." style="position:relative; right:2px; color:#bbb;" class="fa fa-globe"></i></a>
        </span>)
+    else
+      translated_string
+    end
 
 
     # This translation method would take the place of default translate helper <%= t('') %> provided by the rails

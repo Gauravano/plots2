@@ -1,18 +1,20 @@
 <% if current_user && Time.now - current_user.created_at < 1.week %>
-    <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
 
-        <h2 style="font-weight: 800">Hello, welcome to Public Lab!</h2>
+    <h2 style="font-weight: 800">Hello, welcome to Public Lab!</h2>
 
-        This is your dashboard, where recent updates from other community members show up. It'll keep you updated with recent progress, news and developments.
-        <br>
-        To get started at Public Lab, try:
-        <br><br>
-      <p>
+    This is your dashboard, where recent updates from other community members show up. It'll keep you updated with
+    recent progress, news and developments.
+    <br>
+    To get started at Public Lab, try:
+    <br><br>
+    <p>
       <a class="btn btn-sm btn-default" href="/questions" target="_blank">Asking a question</a>
 
       <a class="btn btn-sm btn-default" href="https://publiclab.org/methods" target="_blank">Exploring projects</a>
-      </p>
-    </div>
+    </p>
+  </div>
 
 <% end %>
 
@@ -21,33 +23,36 @@
   <div class="row">
 
     <div class="col-md-8">
- 
-     <%= render partial: "dashboard/header" %>
+
+      <%= render partial: "dashboard/header" %>
 
       <div class="dashboard-blog">
- 
-        <% if @blog %> 
-          <div class="img"<% if @blog.main_image %> style="background-image: url('<%= @blog.main_image.path(:large) %>')"<% end %>>
-       
+
+        <% if @blog %>
+          <div class="img"
+            <% if @blog.main_image %> style="background-image: url('<%= @blog.main_image.path(:large) %>')"
+          <% end %>>
+
             <div class="blog-caption">
-       
+
               <h4>
                 <small class="pull-right hidden-xs hidden-sm"><%= raw translation('dashboard.dashboard.from_blog', :url => '/blog') %></small>
-                <a class="title" href="/blog"><%= @blog.title %></a> 
-                <small><%=raw value_to_key("by") %> <a href="/profile/<%= @blog.author.username %>"><%= @blog.author.username %></a></small>
+                <a class="title" href="/blog"><%= @blog.title %></a>
+                <small><%= raw value_to_key("by") %>
+                  <a href="/profile/<%= @blog.author.username %>"><%= @blog.author.username %></a></small>
               </h4>
-       
+
             </div>
-       
+
           </div>
         <% end %>
-  
-        <%= render partial: "dashboard/activity", locals: { activity: @activity, notes: @notes } %>
- 
+
+        <%= render partial: "dashboard/activity", locals: {activity: @activity, notes: @notes} %>
+
       </div>
 
     </div>
-     
+
     <div class="col-md-4">
 
       <%= feature('dashboard-feature') %>
@@ -59,6 +64,11 @@
   </div>
 
 </div>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 
 <%= stylesheet_link_tag "dashboard" %>
 <%= javascript_include_tag "dashboard" %>
